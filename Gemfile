@@ -17,8 +17,6 @@ gem 'jquery-rails'
 
 gem 'active_model_serializers', '~> 0.8.1'
 
-
-
 group :doc do
   gem 'sdoc', require: false
 end
@@ -30,7 +28,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'rspec-rails', '3.1.0'
+  gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'email_spec'
 end
