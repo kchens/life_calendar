@@ -1,5 +1,9 @@
 class Api::V1::SessionsController < ApplicationController
 
+  def index
+    Session.all
+  end
+
   def create
     user_password = params[:session][:password]
     user_email = params[:session][:email]
@@ -16,7 +20,9 @@ class Api::V1::SessionsController < ApplicationController
   end
 
   def destroy
-    user = User.find_by(auth_token: params[:id])
+    p params
+    p "hello"
+    user = User.find_by(id: params[:id])
     user.generate_authentication_token!
     user.save
     head 204
